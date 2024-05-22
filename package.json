@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "build":"npm run build",
   "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "coverage": "jest --collect-coverage"
+    "coverage": "jest --collect-coverage",
+    "build":"npm run build"
   },
   "keywords": [],
   "author": "",
