@@ -1,19 +1,22 @@
-#erere
-name: Node.js CI
-
+name: Accion de Correr las pruebas
 on:
   push:
-    branches: ["main"]
+    branches: [main]
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    steps:
 
-    - name : "run build"
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Usar Node.js 20.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20.x'
+
+    - name: Instalar dependencias
+      run: npm install
+
+    - name: Correr las pruebas
+      run: npm coverage
