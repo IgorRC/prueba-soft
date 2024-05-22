@@ -1,6 +1,8 @@
 # Node.js
 node_modules/
 
+·coverage/
+
 # Editor/IDE
 .vscode/
 .idea/
